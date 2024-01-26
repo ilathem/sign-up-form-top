@@ -7,7 +7,21 @@
     <title>Sign Up Form - TOP</title>
 </head>
 <body>
-    <div class="hero"></div>
+    <div class="banner">
+        <div class="banner-top-section">
+            <div class="banner-text-wrapper">
+                <img 
+                    src="./materials/odin-lined.png" 
+                    alt="odin-logo" 
+                    class="odin-image"
+                    />
+                <p class="banner-text">Odin</p>
+            </div>
+        </div>
+        <div class="banner-bottom-section">
+            <p class="banner-footer-text">Photo by Halie West on Unsplash</p>
+        </div>
+    </div>
     <div class="content">
         <div class="call">
             <h2>This is not a real online service. You know you need something
@@ -19,20 +33,20 @@
             <h2>Let's do this!</h2>
             <div class="columns">
                 <div class="column">
-                    <label for=""></label>
-                    <input type="text">
-                    <label for=""></label>
-                    <input type="text">
-                    <label for=""></label>
-                    <input type="text">
+                    <label for="fname">First Name</label>
+                    <input name="fname" id="fname" type="text" placeholder="Thor">
+                    <label for="email">Email</label>
+                    <input name="email" id="email" type="email" placeholder="thor_odinson@email.com">
+                    <label for="password">Password</label>
+                    <input name="password" id="password" type="password">
                 </div>
                 <div class="column">
-                    <label for=""></label>
-                    <input type="text">
-                    <label for=""></label>
-                    <input type="text">
-                    <label for=""></label>
-                    <input type="text">
+                    <label for="lname">Last Name</label>
+                    <input name="lname" id="lname" type="text" placeholder="Odinson">
+                    <label for="phone">Phone Number</label>
+                    <input name="phone" id="phone" type="tel" placeholder="111-111-1111">
+                    <label for="password2">Password</label>
+                    <input name="password2" id="password2" type="password">
                 </div>
             </div>
         </div>
