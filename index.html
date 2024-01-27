@@ -24,10 +24,12 @@
     </div>
     <div class="content">
         <div class="call">
-            <h2>This is not a real online service. You know you need something
-                 like this in your life to help you realize your deepest
-                dreams. Sign up <em>now</em> to get started.</h2>
-            <h2>You <em>know</em> you want to.</h2>
+            <div class="call-content">
+                <h2>This is not a real online service. You know you need something
+                    like this in your life to help you realize your deepest
+                    dreams. Sign up <em>now</em> to get started.</h2>
+                <h2>You <em>know</em> you want to.</h2>
+            </div>
         </div>
         <div class="form">
             <h2>Let's do this!</h2>
@@ -38,19 +40,45 @@
                     <label for="email">Email</label>
                     <input name="email" id="email" type="email" placeholder="thor_odinson@email.com">
                     <label for="password">Password</label>
-                    <input name="password" id="password" type="password">
+                    <input required name="password" id="password" type="password">
+                    <p class="password-msg">* Passwords do not match</p>
                 </div>
                 <div class="column">
                     <label for="lname">Last Name</label>
                     <input name="lname" id="lname" type="text" placeholder="Odinson">
                     <label for="phone">Phone Number</label>
                     <input name="phone" id="phone" type="tel" placeholder="111-111-1111">
-                    <label for="password2">Password</label>
-                    <input name="password2" id="password2" type="password">
+                    <label for="password2">Confirm Password</label>
+                    <input required name="password2" id="password2" type="password">
                 </div>
             </div>
         </div>
-        <div class="buttons"></div>
+        <div class="buttons">
+            <button class="create-account-btn">Create Account</button>
+            <p class="log-in-txt">Already have an account? <a href="#">Log in</a></p>
+        </div>
     </div>
+
+    <script>
+        document.querySelector("#password").addEventListener("keyup", () => checkPasswords());
+        document.querySelector("#password2").addEventListener("keyup", () => checkPasswords());
+        function checkPasswords () {
+            console.log("checking passwords");
+            console.log(document.querySelector("#password").value)
+            console.log(document.querySelector("#password2").value)
+            if (
+                document.querySelector("#password").value !==
+                document.querySelector("#password2").value
+            ) {
+                document.querySelector("#password").classList.add("invalid")
+                document.querySelector("#password2").classList.add("invalid")
+                document.querySelector(".password-msg").style.opacity = "80%";
+            } else {
+                document.querySelector("#password").classList.remove("invalid")
+                document.querySelector("#password2").classList.remove("invalid")
+                document.querySelector(".password-msg").style.opacity = "0";
+            }
+        }
+    </script>
 </body>
 </html>
