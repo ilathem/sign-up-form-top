@@ -97,7 +97,7 @@ body {
 }
 
 .call-content {
-    width: 80%;
+    width: 90%;
 }
 
 .form {
@@ -114,12 +114,46 @@ body {
 
 .columns {
     display: flex;
+    width: 80%;
+    justify-content: space-between;
 }
 
 .column {
     display: flex;
     flex-direction: column;
+    flex: 1;
 }
+
+.grid {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+        "firstname lastname"
+        "email phoneNumber"
+        "password password2";
+    column-gap: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+    .grid {
+        width: 100%;
+    }
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.firstname { grid-area: firstname; }
+.lastname { grid-area: lastname; }
+.phoneNumber { grid-area: phoneNumber; }
+.email { grid-area: email; }
+.password { grid-area: password; }
+.password2 { grid-area: password2; }
+
 
 label {
     text-transform: uppercase;
@@ -132,10 +166,13 @@ label {
 }
 
 input {
+    width: 100%;
+    max-width: 250px;
     background-color: #FCFCFC;
-    font-size: 1.125rem;
+    font-size: 1rem;
     padding: .25em;
-    padding-left: .5em;
+    padding-top: .5em;
+    padding-left: 1em;
     border-radius: 5px;
     outline: none;
     border: 1px solid #E5E7EB;
