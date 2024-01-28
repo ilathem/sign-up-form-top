@@ -11,6 +11,7 @@
 
 h2 {
    padding-bottom: 1em;
+   font-size: 1.5rem;
 }
 
 body {
@@ -22,7 +23,7 @@ body {
 }
 
 .banner {
-    flex: 1;
+    flex: 3;
     background-image: url("./materials/leaf.avif");
     background-size: cover;
     background-position: center;
@@ -79,7 +80,7 @@ body {
 
 .content {
     width: 100%;
-    flex: 2;
+    flex: 5;
     display: flex;
     flex-direction: column;
 }
@@ -96,7 +97,7 @@ body {
 }
 
 .call-content {
-    width: 70%;
+    width: 80%;
 }
 
 .form {
